@@ -6,11 +6,13 @@ import Footer from "@/components/layout/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -21,6 +23,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="stylesheet"
+          href={process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork/globals.css' : '/globals.css'}
+        />
+        <link
+          rel="icon"
+          href={process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork/favicon.ico' : '/favicon.ico'}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-gray-900 via-blue-950 to-black min-h-screen text-white`}
       >

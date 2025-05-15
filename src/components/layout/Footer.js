@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import GithubPagesLink from '@/components/ui/GithubPagesLink';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
+            <GithubPagesLink href="/" className="flex items-center space-x-2 mb-4">
               <img src={process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork/images/logo-icon.svg' : '/images/logo-icon.svg'} alt="" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
                 SimWork
@@ -99,12 +99,12 @@ function SocialIcon({ href, children }) {
 function FooterLink({ href, children }) {
   return (
     <li>
-      <Link
+      <GithubPagesLink
         href={href}
         className="text-white/60 hover:text-white transition-colors duration-300"
       >
         {children}
-      </Link>
+      </GithubPagesLink>
     </li>
   );
 }

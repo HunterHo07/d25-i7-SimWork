@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import GithubPagesLink from '@/components/ui/GithubPagesLink';
 import { motion } from 'framer-motion';
 
 export default function Header() {
@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="fixed w-full z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-2">
+        <GithubPagesLink href="/" className="flex items-center space-x-2">
           <img src={process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork/images/logo-icon.svg' : '/images/logo-icon.svg'} alt="" className="h-8 w-8" />
           <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
             SimWork
@@ -86,24 +86,24 @@ export default function Header() {
 
 function NavLink({ href, children }) {
   return (
-    <Link
+    <GithubPagesLink
       href={href}
       className="text-white/80 hover:text-white transition-colors duration-300 relative group"
     >
       {children}
       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-    </Link>
+    </GithubPagesLink>
   );
 }
 
 function MobileNavLink({ href, children, onClick }) {
   return (
-    <Link
+    <GithubPagesLink
       href={href}
       className="text-white/80 hover:text-white transition-colors duration-300 py-2"
       onClick={onClick}
     >
       {children}
-    </Link>
+    </GithubPagesLink>
   );
 }

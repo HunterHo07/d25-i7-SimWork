@@ -2,35 +2,42 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>SimWork - Redirecting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SimWork - The Future of Work Training</title>
   <script>
-    // This script checks if a redirect is needed and handles it
+    // This script handles GitHub Pages routing for Next.js apps
     (function() {
       // Parse the URL
       var location = window.location;
       var search = location.search;
       var hash = location.hash;
-      
-      // Check if we need to redirect
-      if (search.indexOf('?/') !== -1) {
-        // We need to redirect to the correct path
-        var redirectPath = search.substring(2); // Remove the '?/'
-        var basePath = '/d25-i7-SimWork';
-        
-        // Replace ~and~ with &
-        redirectPath = redirectPath.replace(/~and~/g, '&');
-        
-        // Redirect to the correct path
-        window.history.replaceState(null, null, basePath + '/' + redirectPath + hash);
+      var basePath = '/d25-i7-SimWork';
+
+      // Check if we need to redirect based on query parameters
+      if (search) {
+        // Try to parse the search query
+        var q = {};
+        search.slice(1).split('&').forEach(function(v) {
+          var a = v.split('=');
+          q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+        });
+
+        // If the path is specified in the search query, redirect to it
+        if (q.p !== undefined) {
+          window.history.replaceState(null, null,
+            basePath + (q.p.charAt(0) === '/' ? q.p : '/' + q.p) +
+            (q.q ? ('?' + q.q) : '') +
+            hash
+          );
+        }
       }
     })();
   </script>
+  <!-- Include the router script -->
+  <script src="/d25-i7-SimWork/gh-pages-router.js"></script>
 </head>
 <body>
   <div id="root"></div>
-  <script>
-    // Redirect to the actual index.html
-    window.location.href = '/d25-i7-SimWork/index.html';
-  </script>
+  <!-- No redirect needed, the Next.js static export will handle this -->
 </body>
 </html>

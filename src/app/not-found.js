@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '@/components/ui/Button';
+import GithubPagesLink from '@/components/ui/GithubPagesLink';
 
 export default function NotFound() {
   const router = useRouter();
@@ -11,7 +12,7 @@ export default function NotFound() {
     // Check if we're on GitHub Pages and handle client-side routing
     const path = window.location.pathname;
     const basePath = '/d25-i7-SimWork';
-    
+
     if (path.startsWith(basePath) && path !== basePath && path !== `${basePath}/`) {
       const relativePath = path.replace(basePath, '');
       if (relativePath) {
