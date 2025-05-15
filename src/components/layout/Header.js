@@ -19,7 +19,7 @@ export default function Header() {
           <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
             SimWork
           </span>
-        </Link>
+        </GithubPagesLink>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">

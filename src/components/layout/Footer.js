@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
                 SimWork
               </span>
-            </Link>
+            </GithubPagesLink>
             <p className="text-white/60 mb-4">
               Revolutionizing skill development through immersive simulation.
             </p>
