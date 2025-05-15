@@ -11,14 +11,10 @@ export default function NotFound() {
   useEffect(() => {
     // Check if we're on GitHub Pages and handle client-side routing
     const path = window.location.pathname;
-    const basePath = '/d25-i7-SimWork';
 
-    if (path.startsWith(basePath) && path !== basePath && path !== `${basePath}/`) {
-      const relativePath = path.replace(basePath, '');
-      if (relativePath) {
-        // Redirect to the correct path
-        window.location.href = `${basePath}${relativePath}`;
-      }
+    if (path !== '/' && path !== '') {
+      // Redirect to the correct path
+      window.location.href = path;
     }
   }, []);
 

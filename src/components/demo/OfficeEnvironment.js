@@ -62,7 +62,7 @@ export default function OfficeEnvironment() {
         onClick={handleEnvironmentClick}
       >
         <Image
-          src={process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork/images/office-environment.jpg' : '/images/office-environment.jpg'}
+          src="/images/office-environment.jpg"
           alt="Office Environment"
           fill
           className="object-cover opacity-40"

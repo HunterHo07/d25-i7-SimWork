@@ -50,7 +50,7 @@ export default function HeroSection() {
       {/* Background effects */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork/images/hero-bg.jpg' : '/images/hero-bg.jpg'}
+          src="/images/hero-bg.jpg"
           alt=""
           fill
           priority
