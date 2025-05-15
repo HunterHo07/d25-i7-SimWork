@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sim icon - stylized S -->
+  <path d="M15 15C15 12.2386 17.2386 10 20 10H40C42.7614 10 45 12.2386 45 15V20C45 22.7614 42.7614 25 40 25H20C17.2386 25 15 22.7614 15 20V15Z" fill="url(#logoGradient)"/>
+  <path d="M15 35C15 32.2386 17.2386 30 20 30H40C42.7614 30 45 32.2386 45 35V40C45 42.7614 42.7614 45 40 45H20C17.2386 45 15 42.7614 15 40V35Z" fill="url(#logoGradient)"/>
+  <path d="M15 25H45V30H15V25Z" fill="url(#logoGradient)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="30" cy="50" r="5" fill="url(#logoGradient)" opacity="0.6"/>
+</svg>

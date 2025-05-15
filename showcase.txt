@@ -1,0 +1,21 @@
+1:"$Sreact.fragment"
+2:I[8022,["501","static/chunks/501-96794b78b5d8f792.js","874","static/chunks/874-f56d82da25aea331.js","177","static/chunks/app/layout-19a034ca55604a0e.js"],"default"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+5:I[1200,["501","static/chunks/501-96794b78b5d8f792.js","874","static/chunks/874-f56d82da25aea331.js","345","static/chunks/app/not-found-63fd08d612130016.js"],"default"]
+6:I[2700,["501","static/chunks/501-96794b78b5d8f792.js","874","static/chunks/874-f56d82da25aea331.js","177","static/chunks/app/layout-19a034ca55604a0e.js"],"default"]
+7:I[9665,[],"MetadataBoundary"]
+9:I[9665,[],"OutletBoundary"]
+c:I[4911,[],"AsyncMetadataOutlet"]
+e:I[9665,[],"ViewportBoundary"]
+10:I[6614,[],""]
+:HL["/d25-i7-SimWork/_next/static/css/365d6206f450e140.css","style"]
+0:{"P":null,"b":"eVczgypO_aBHQ8pUP_nLL","p":"/d25-i7-SimWork","c":["","showcase"],"i":false,"f":[[["",{"children":["showcase",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/d25-i7-SimWork/_next/static/css/365d6206f450e140.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_43be8f __variable_c79904 antialiased bg-gradient-to-br from-gray-900 via-blue-950 to-black min-h-screen text-white","children":["$","div",null,{"className":"flex flex-col min-h-screen","children":[["$","$L2",null,{}],["$","main",null,{"className":"flex-grow pt-20","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L5",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{}]]}]}]}]]}],{"children":["showcase",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","main",null,{"className":"flex min-h-screen flex-col items-center justify-between p-24","children":[["$","h1",null,{"className":"text-4xl font-bold mb-8","children":"SimWork Showcase"}],["$","p",null,{"className":"text-xl mb-8","children":"Showcase page coming soon..."}]]}],["$","$L7",null,{"children":"$L8"}],null,["$","$L9",null,{"children":["$La","$Lb",["$","$Lc",null,{"promise":"$@d"}]]}]]}],{},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","YftbuHbVMueoRhu_fv3TN",{"children":[["$","$Le",null,{"children":"$Lf"}],null]}],null]}],false]],"m":"$undefined","G":["$10","$undefined"],"s":false,"S":true}
+11:"$Sreact.suspense"
+12:I[4911,[],"AsyncMetadata"]
+8:["$","$11",null,{"fallback":null,"children":["$","$L12",null,{"promise":"$@13"}]}]
+b:null
+f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+a:null
+13:{"metadata":[["$","title","0",{"children":"SimWork - The Future of Work Training"}],["$","meta","1",{"name":"description","content":"SimWork is an AI-driven, immersive 'future of work' game that transforms how companies train employees and assess candidates."}],["$","link","2",{"rel":"icon","href":"/d25-i7-SimWork/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+d:{"metadata":"$13:metadata","error":null,"digest":"$undefined"}
