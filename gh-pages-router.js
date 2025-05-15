@@ -8,7 +8,7 @@
   var pathSegmentsToKeep = 1; // Keep the first segment (repo name)
 
   var l = window.location;
-  var basePath = '';
+  var basePath = '/d25-i7-SimWork';
 
   // Check if we need to redirect
   if (l.search) {
