@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import GithubPagesImage from '@/components/ui/GithubPagesImage';
 import { roleTasks } from '@/data/demoTasks';
 
 export default function OfficeEnvironment() {
@@ -61,7 +61,7 @@ export default function OfficeEnvironment() {
         className="relative w-full h-full cursor-pointer"
         onClick={handleEnvironmentClick}
       >
-        <Image
+        <GithubPagesImage
           src="/images/office-environment.jpg"
           alt="Office Environment"
           fill

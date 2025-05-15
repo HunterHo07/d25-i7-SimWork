@@ -2,7 +2,7 @@
   "name": "d25-i7-simwork",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hunterho07.github.io",
+  "homepage": "https://hunterho07.github.io/d25-i7-SimWork",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

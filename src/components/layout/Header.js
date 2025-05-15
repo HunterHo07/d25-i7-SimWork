@@ -11,11 +11,14 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Get the base path based on environment
+  const basePath = process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork' : '';
+
   return (
     <header className="fixed w-full z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <GithubPagesLink href="/" className="flex items-center space-x-2">
-          <img src="/images/logo-icon.svg" alt="" className="h-8 w-8" />
+          <img src={`${basePath}/images/logo-icon.svg`} alt="" className="h-8 w-8" />
           <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
             SimWork
           </span>

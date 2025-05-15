@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,12 +22,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // Determine the base path based on environment
+  const basePath = process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork' : '';
+
   return (
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="/d25-i7-SimWork/globals.css" />
-        <link rel="icon" href="/d25-i7-SimWork/favicon.ico" />
+        {/* Import CSS and favicon with proper paths */}
+        <link rel="icon" href={`${basePath}/favicon.ico`} />
+        {/* Add the GitHub Pages router script for client-side routing */}
+        <Script src={`${basePath}/gh-pages-router.js`} strategy="beforeInteractive" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-gray-900 via-blue-950 to-black min-h-screen text-white`}
