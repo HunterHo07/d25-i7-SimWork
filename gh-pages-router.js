@@ -6,8 +6,38 @@
   // Configuration
   var basePath = '/d25-i7-SimWork';
   var pathSegmentsToKeep = 1; // Keep the repo name in the path
+  var hostname = window.location.hostname;
+  var isGitHubPages = hostname === 'hunterho07.github.io';
+
+  // Only run on GitHub Pages
+  if (!isGitHubPages) return;
 
   var l = window.location;
+
+  // Fix for double basePath in URLs
+  function fixDoublePaths() {
+    var doublePathRegex = new RegExp(basePath + basePath, 'g');
+
+    // Fix links with double basePath
+    document.querySelectorAll('a[href*="' + basePath + basePath + '"]').forEach(function(link) {
+      var href = link.getAttribute('href');
+      var fixedHref = href.replace(doublePathRegex, basePath);
+      link.setAttribute('href', fixedHref);
+      console.log('Fixed double basePath in link:', href, '->', fixedHref);
+    });
+
+    // Fix images with double basePath
+    document.querySelectorAll('img[src*="' + basePath + basePath + '"]').forEach(function(img) {
+      var src = img.getAttribute('src');
+      var fixedSrc = src.replace(doublePathRegex, basePath);
+      img.setAttribute('src', fixedSrc);
+      console.log('Fixed double basePath in image:', src, '->', fixedSrc);
+    });
+  }
+
+  // Run path fixing on load and periodically
+  window.addEventListener('load', fixDoublePaths);
+  setInterval(fixDoublePaths, 1000); // Check every second
 
   // Handle query string-based routing (for direct navigation to 404.html)
   if (l.search) {
@@ -50,13 +80,35 @@
     if (!anchor) return;
 
     var href = anchor.getAttribute('href');
+    if (!href) return;
 
-    // Only handle internal links that don't already have the basePath
-    if (href && href.startsWith('/') && !href.startsWith(basePath) && !href.startsWith('http')) {
+    // Fix double basePath in href
+    if (href.includes(basePath + basePath)) {
+      href = href.replace(basePath + basePath, basePath);
+      anchor.setAttribute('href', href);
+    }
+
+    // Skip if it's an external link, hash link, or already has basePath
+    if (href.startsWith('http') ||
+        href.startsWith('#') ||
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        href.startsWith(basePath)) {
+      return;
+    }
+
+    // Only handle internal links that start with /
+    if (href.startsWith('/')) {
       e.preventDefault();
       var newPath = basePath + href;
       window.history.pushState(null, null, newPath);
       window.dispatchEvent(new Event('popstate'));
+
+      // If this is a Next.js app, we need to manually trigger a route change
+      if (window.__NEXT_DATA__) {
+        var event = new CustomEvent('routeChangeComplete', { detail: { url: newPath } });
+        window.dispatchEvent(event);
+      }
     }
   });
 })();
