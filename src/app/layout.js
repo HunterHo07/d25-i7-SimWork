@@ -25,8 +25,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="/globals.css" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/d25-i7-SimWork/globals.css" />
+        <link rel="icon" href="/d25-i7-SimWork/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-gray-900 via-blue-950 to-black min-h-screen text-white`}
