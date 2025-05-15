@@ -1,10 +1,13 @@
 'use client';
 
 import GithubPagesLink from '@/components/ui/GithubPagesLink';
+import GithubPagesImage from '@/components/ui/GithubPagesImage';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  // Get the base path based on environment
+  const basePath = process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork' : '';
 
   return (
     <footer className="bg-black/30 backdrop-blur-lg border-t border-white/10 py-12">
@@ -12,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <GithubPagesLink href="/" className="flex items-center space-x-2 mb-4">
-              <img src={process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork/images/logo-icon.svg' : '/images/logo-icon.svg'} alt="" className="h-8 w-8" />
+              <GithubPagesImage src="/images/logo-icon.svg" alt="" width={32} height={32} className="h-8 w-8" />
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
                 SimWork
               </span>

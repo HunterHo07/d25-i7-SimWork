@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import GithubPagesLink from '@/components/ui/GithubPagesLink';
+import GithubPagesImage from '@/components/ui/GithubPagesImage';
 import { motion } from 'framer-motion';
 
 export default function Header() {
@@ -18,7 +19,7 @@ export default function Header() {
     <header className="fixed w-full z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <GithubPagesLink href="/" className="flex items-center space-x-2">
-          <img src={`${basePath}/images/logo-icon.svg`} alt="" className="h-8 w-8" />
+          <GithubPagesImage src="/images/logo-icon.svg" alt="" width={32} height={32} className="h-8 w-8" />
           <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
             SimWork
           </span>

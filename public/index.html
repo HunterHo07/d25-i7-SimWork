@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SimWork - The Future of Work Training</title>
+  <base href="/d25-i7-SimWork/">
   <script>
     // This script handles GitHub Pages routing for Next.js apps
     (function() {
@@ -12,6 +13,11 @@
       var search = location.search;
       var hash = location.hash;
       var basePath = '/d25-i7-SimWork';
+      var hostname = location.hostname;
+      var isGitHubPages = hostname === 'hunterho07.github.io';
+
+      // If we're not on GitHub Pages, no need to continue
+      if (!isGitHubPages) return;
 
       // Check if we need to redirect based on query parameters
       if (search) {
@@ -29,12 +35,21 @@
             (q.q ? ('?' + q.q) : '') +
             hash
           );
+          return;
         }
+      }
+
+      // Check if we need to redirect to add basePath
+      var path = location.pathname;
+      if (!path.startsWith(basePath) && path !== '/' && path !== '') {
+        window.location.href = basePath + path;
       }
     })();
   </script>
   <!-- Include the router script -->
   <script src="/d25-i7-SimWork/gh-pages-router.js"></script>
+  <!-- Include the redirect script -->
+  <script src="/d25-i7-SimWork/github-pages-redirect.js"></script>
 </head>
 <body>
   <div id="root"></div>
