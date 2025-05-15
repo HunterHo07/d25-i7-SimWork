@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import GithubPagesImage from '@/components/ui/GithubPagesImage';
+import AppImage from '@/components/ui/AppImage';
 import Section, { SectionTitle } from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
 
@@ -81,7 +81,7 @@ export default function RolesSection() {
                 className="bg-black/30 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden h-full"
               >
                 <div className="relative h-64">
-                  <GithubPagesImage
+                  <AppImage
                     src={activeRole.image}
                     alt={activeRole.title}
                     fill

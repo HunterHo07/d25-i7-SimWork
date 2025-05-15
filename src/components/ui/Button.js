@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import GithubPagesLink from '@/components/ui/GithubPagesLink';
+import AppLink from '@/components/ui/AppLink';
 
 export default function Button({
   children,
@@ -45,9 +45,9 @@ export default function Button({
 
   if (href) {
     return (
-      <GithubPagesLink href={href} className={classes} {...props}>
+      <AppLink href={href} className={classes} {...props}>
         {buttonContent}
-      </GithubPagesLink>
+      </AppLink>
     );
   }
 

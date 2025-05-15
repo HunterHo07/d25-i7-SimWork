@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import GithubPagesLink from '@/components/ui/GithubPagesLink';
-import GithubPagesImage from '@/components/ui/GithubPagesImage';
+import AppLink from '@/components/ui/AppLink';
+import AppImage from '@/components/ui/AppImage';
 import { motion } from 'framer-motion';
 
 export default function Header() {
@@ -12,18 +12,15 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Get the base path based on environment
-  const basePath = process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork' : '';
-
   return (
     <header className="fixed w-full z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <GithubPagesLink href="/" className="flex items-center space-x-2">
-          <GithubPagesImage src="/images/logo-icon.svg" alt="" width={32} height={32} className="h-8 w-8" />
+        <AppLink href="/" className="flex items-center space-x-2">
+          <AppImage src="/images/logo-icon.svg" alt="" width={32} height={32} className="h-8 w-8" />
           <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
             SimWork
           </span>
-        </GithubPagesLink>
+        </AppLink>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
@@ -90,24 +87,24 @@ export default function Header() {
 
 function NavLink({ href, children }) {
   return (
-    <GithubPagesLink
+    <AppLink
       href={href}
       className="text-white/80 hover:text-white transition-colors duration-300 relative group"
     >
       {children}
       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-    </GithubPagesLink>
+    </AppLink>
   );
 }
 
 function MobileNavLink({ href, children, onClick }) {
   return (
-    <GithubPagesLink
+    <AppLink
       href={href}
       className="text-white/80 hover:text-white transition-colors duration-300 py-2"
       onClick={onClick}
     >
       {children}
-    </GithubPagesLink>
+    </AppLink>
   );
 }

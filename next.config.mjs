@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/d25-i7-SimWork',
-  assetPrefix: '/d25-i7-SimWork/',
+  // Remove output: 'export' for Vercel deployment
+  // Remove basePath and assetPrefix as they're not needed for Vercel
   images: {
-    unoptimized: true,
+    domains: ['vercel.com'],
   },
+  // Keep trailing slash for consistent URLs
   trailingSlash: true,
 };
 

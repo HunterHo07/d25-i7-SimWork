@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import GithubPagesImage from '@/components/ui/GithubPagesImage';
+import AppImage from '@/components/ui/AppImage';
 import GlowingButton from '@/components/animations/GlowingButton';
 import ParticleField from '@/components/animations/ParticleField';
 import AuroraBackground from '@/components/animations/AuroraBackground';
@@ -49,7 +49,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20">
       {/* Background effects */}
       <div className="absolute inset-0 z-0">
-        <GithubPagesImage
+        <AppImage
           src="/images/hero-bg.jpg"
           alt=""
           fill
