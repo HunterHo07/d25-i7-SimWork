@@ -7,10 +7,6 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // Ensure all paths are treated as static
-  experimental: {
-    appDir: true,
-  },
 };
 
 export default nextConfig;
