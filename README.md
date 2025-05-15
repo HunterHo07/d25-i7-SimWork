@@ -35,10 +35,25 @@ SimWork creates a gamified, immersive environment that simulates real workplace 
 ## Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Deployment
+
+This project is configured to deploy to GitHub Pages:
+
+```bash
+# Build and deploy to GitHub Pages
+npm run deploy
+```
+
+The deployed site will be available at: [https://hunterho07.github.io/d25-i7-SimWork](https://hunterho07.github.io/d25-i7-SimWork)
 
 ## Contact Us
 

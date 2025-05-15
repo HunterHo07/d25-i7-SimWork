@@ -14,14 +14,14 @@ export default function HeroSection() {
   const [generationStep, setGenerationStep] = useState(0);
   const [showPreview, setShowPreview] = useState(false);
   const inputRef = useRef(null);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (idea.trim() === '') return;
-    
+
     setIsGenerating(true);
     setGenerationStep(0);
-    
+
     // Simulate AI generation steps
     const timer1 = setTimeout(() => setGenerationStep(1), 1500);
     const timer2 = setTimeout(() => setGenerationStep(2), 3000);
@@ -29,14 +29,14 @@ export default function HeroSection() {
       setGenerationStep(3);
       setShowPreview(true);
     }, 4500);
-    
+
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
       clearTimeout(timer3);
     };
   };
-  
+
   const resetDemo = () => {
     setIdea('');
     setIsGenerating(false);
@@ -44,15 +44,15 @@ export default function HeroSection() {
     setShowPreview(false);
     inputRef.current?.focus();
   };
-  
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20">
       {/* Background effects */}
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="/images/hero-bg.jpg" 
-          alt="" 
-          fill 
+        <Image
+          src={process.env.NODE_ENV === 'production' ? '/d25-i7-SimWork/images/hero-bg.jpg' : '/images/hero-bg.jpg'}
+          alt=""
+          fill
           priority
           className="object-cover opacity-20"
         />
@@ -61,9 +61,9 @@ export default function HeroSection() {
       <ParticleField count={100} color="#4f46e5" className="z-0" />
       <AuroraBackground className="z-0" />
       <FloatingElements className="z-0" />
-      
+
       <div className="container mx-auto px-4 z-10 relative">
-        <motion.div 
+        <motion.div
           className="max-w-4xl mx-auto text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,8 +76,8 @@ export default function HeroSection() {
             SimWork is an AI-driven immersive simulation that transforms how companies train employees and assess candidates.
           </p>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="max-w-3xl mx-auto bg-black/30 backdrop-blur-xl p-6 md:p-8 rounded-xl border border-white/10 mb-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -87,7 +87,7 @@ export default function HeroSection() {
             <h2 className="text-2xl font-bold mb-2">Try It Yourself</h2>
             <p className="text-white/70">Enter a job role or skill to generate a personalized training simulation</p>
           </div>
-          
+
           {!showPreview ? (
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4">
               <input
@@ -123,51 +123,51 @@ export default function HeroSection() {
               </div>
             </div>
           )}
-          
+
           {/* Generation steps */}
           {isGenerating && !showPreview && (
             <div className="mt-6">
               <div className="flex flex-col gap-4">
-                <GenerationStep 
-                  step={1} 
-                  text="Analyzing job requirements and skills..." 
-                  active={generationStep >= 0} 
+                <GenerationStep
+                  step={1}
+                  text="Analyzing job requirements and skills..."
+                  active={generationStep >= 0}
                   completed={generationStep > 0}
                 />
-                <GenerationStep 
-                  step={2} 
-                  text="Creating personalized challenges..." 
-                  active={generationStep >= 1} 
+                <GenerationStep
+                  step={2}
+                  text="Creating personalized challenges..."
+                  active={generationStep >= 1}
                   completed={generationStep > 1}
                 />
-                <GenerationStep 
-                  step={3} 
-                  text="Building interactive environment..." 
-                  active={generationStep >= 2} 
+                <GenerationStep
+                  step={3}
+                  text="Building interactive environment..."
+                  active={generationStep >= 2}
                   completed={generationStep > 2}
                 />
               </div>
             </div>
           )}
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <StepCard 
+          <StepCard
             number="01"
             title="Enter Your Role"
             description="Specify your job role or the skills you want to develop"
           />
-          <StepCard 
+          <StepCard
             number="02"
             title="AI Builds Simulation"
             description="Our AI creates personalized, realistic work scenarios"
           />
-          <StepCard 
+          <StepCard
             number="03"
             title="Practice & Improve"
             description="Complete challenges and receive feedback to enhance your skills"

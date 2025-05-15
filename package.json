@@ -1,12 +1,16 @@
 {
-  "name": "b1",
+  "name": "d25-i7-SimWork",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hunterho07.github.io/d25-i7-SimWork",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build",
+    "predeploy": "npm run export",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.7",
@@ -21,6 +25,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4"
   }
 }
